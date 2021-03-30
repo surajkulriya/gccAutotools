@@ -1,1 +1,2 @@
 # gccAutotools
+autoreconf -i
