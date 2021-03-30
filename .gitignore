@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#files generated from make
+.deps/
+Makefile
+config.h
+config.log
+config.status
+hello
+stamp-h1
+

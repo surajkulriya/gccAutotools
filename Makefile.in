@@ -102,7 +102,7 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_hello_OBJECTS = hello.$(OBJEXT)
+am_hello_OBJECTS = hello.$(OBJEXT) whine.$(OBJEXT)
 hello_OBJECTS = $(am_hello_OBJECTS)
 hello_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -120,7 +120,7 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/hello.Po
+am__depfiles_remade = ./$(DEPDIR)/hello.Po ./$(DEPDIR)/whine.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -271,7 +271,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-hello_SOURCES = hello.c
+hello_SOURCES = hello.c whine.c whine.h
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -379,6 +379,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hello.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/whine.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -669,6 +670,7 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 		-rm -f ./$(DEPDIR)/hello.Po
+	-rm -f ./$(DEPDIR)/whine.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -717,6 +719,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
 		-rm -f ./$(DEPDIR)/hello.Po
+	-rm -f ./$(DEPDIR)/whine.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
